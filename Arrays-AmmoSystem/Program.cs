@@ -12,7 +12,18 @@ namespace Arrays_AmmoSystem
         static int[] maxAmmo;
         static string[] weaponName;
         static int weapon;
-       
+        static string name;
+
+
+        static void ShowHUD()
+        {
+            Console.WriteLine();
+            Console.WriteLine("-------------------");
+            Console.WriteLine(name);
+            Console.WriteLine(weaponName[weapon] + ": " + ammo[weapon] + "/" + maxAmmo[weapon]);
+            Console.WriteLine("-------------------");
+            Console.WriteLine();
+        }
 
         static void FireWeapon()
         {
@@ -24,7 +35,7 @@ namespace Arrays_AmmoSystem
             ammo[weapon] = ammo[weapon] - 1;
             if (ammo[weapon] <= 0)
             {
-                Console.WriteLine("You're out of ammo!");
+                Console.WriteLine("Reload");
                 ammo[weapon] = 0;
             }
         }
@@ -60,24 +71,62 @@ namespace Arrays_AmmoSystem
             weaponName[3] = "Sniper";
 
             weapon = 0;
+            name = "Musu";
 
-            Console.WriteLine(ammo[weapon]);
+            // fake gamplay to show arrays and ammo
+
+            ShowHUD();
             FireWeapon();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
             FireWeapon();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
             FireWeapon();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
             FireWeapon();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
             FireWeapon();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
             FireWeapon();
-            Console.WriteLine(ammo[weapon]);
-            FireWeapon();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
             Reload();
-            Console.WriteLine(ammo[weapon]);
+            ShowHUD();
+
+            weapon = 1;
+
+            ShowHUD();
+            FireWeapon();
+            ShowHUD();
+
+            weapon = 2;
+            ShowHUD();
+            FireWeapon();
+            ShowHUD();
+            FireWeapon();
+            ShowHUD();
+            FireWeapon();
+
+            weapon = 1;
+
+            ShowHUD();
+            FireWeapon();
+            ShowHUD();
+            Reload();
+            ShowHUD();
+
+            weapon = 3;
+            ShowHUD();
+            FireWeapon();
+            ShowHUD();
+
+            weapon = 2;
+            ShowHUD();
+
+            weapon = 0;
+            ShowHUD();
+
+
+
+
 
             Console.ReadKey(true);
 
